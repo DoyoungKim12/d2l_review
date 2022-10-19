@@ -213,7 +213,7 @@ $$P\left(R[p, f] - R_\mathrm{emp}[\mathbf{X}, \mathbf{Y}, f] < \alpha\right) \ge
 \ \text{ for }\ \alpha \geq c \sqrt{(\mathrm{VC} - \log \delta)/n}.$$
 <br>
 
-- [VC 차원을 이해하기 위한 선행지식(break point, growth function 등)](https://keepmind.net/%ea%b8%b0%ea%b3%84%ed%95%99%ec%8a%b5-is-learning-feasible/)
+- [VC 차원을 이해하기 위한 선행지식(break point, growth function 등)](https://keepmind.net/%ea%b8%b0%ea%b3%84%ed%95%99%ec%8a%b5-training-versus-testing/)
 - [VC 차원 개념설명, VC Dimension의 값 = 데이터의 차원 + 1인 이유 증명 등](https://keepmind.net/%ea%b8%b0%ea%b3%84%ed%95%99%ec%8a%b5-vc-dimension/)
 <br>
 
