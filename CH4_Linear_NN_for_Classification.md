@@ -101,7 +101,8 @@ $\epsilon(f)$ 이 우리가 알 수 없는 값이기는 하지만, 1보다 클 �
 $$P(\epsilon_\mathcal{D}(f) - \epsilon(f) \geq t) < \exp\left( - 2n t^2 \right).$$
 <br>
 
-- [Hoeffding 부등식에 대한 보다 자세한 설명]([http://www.google.co.kr](https://keepmind.net/%ea%b8%b0%ea%b3%84%ed%95%99%ec%8a%b5-is-learning-feasible/))
+- [Hoeffding 부등식에 대한 보다 자세한 설명](https://keepmind.net/%ea%b8%b0%ea%b3%84%ed%95%99%ec%8a%b5-is-learning-feasible/)
+<br>
 
 추정치 $\epsilon_\mathcal{D}$ 와 실제 오차율 $\epsilon$ 의 차이가 0.01을 초과하지 않는다는 보증을 95%의 신뢰구간 내에서 허용할 수 있는 
 가장 작은 데이터셋의 크기를 구한다면, 위의 점근 분석(asymptotic analysis)에 의해 제안된 10000개와 비교하여 **약 15000개의 샘플이 필요하다**는 것을 알 수 있다.
@@ -212,6 +213,10 @@ $$P\left(R[p, f] - R_\mathrm{emp}[\mathbf{X}, \mathbf{Y}, f] < \alpha\right) \ge
 \ \text{ for }\ \alpha \geq c \sqrt{(\mathrm{VC} - \log \delta)/n}.$$
 <br>
 
+- [VC 차원을 이해하기 위한 선행지식(break point, growth function 등)](https://keepmind.net/%ea%b8%b0%ea%b3%84%ed%95%99%ec%8a%b5-is-learning-feasible/)
+- [VC 차원 개념설명, VC Dimension의 값 = 데이터의 차원 + 1인 이유 증명 등](https://keepmind.net/%ea%b8%b0%ea%b3%84%ed%95%99%ec%8a%b5-vc-dimension/)
+<br>
+
 위 식에서 $\delta > 0$ 는 해당 구간(bound)이 오염되었을 확률이다. 
 $\alpha$ 는 일반화 갭의 상한(upper bound)이며, $n$ 은 데이터셋의 크기이다. 
 마지막으로, $c > 0$ 는 상수로 발생가능한 손실의 크기에 따라 달라지는 값이다.
@@ -220,13 +225,15 @@ VC 차원은 어떤 임의의 (이진수) 라벨이라도 할당할 수 있는 �
 예를 들어, d 차원의 입력을 받는 선형모델은 d+1 차원의 VC 차원을 가진다.
 이는 3개의 점이 주어졌을 때, 각 점이 -1과 1 중 어떤 라벨을 가지든 하나의 직선으로 분리하는 것이 가능하지만,
 4개의 점이 주어졌을 때에는 하나의 직선으로는 올바른 분류기를 만들 수 없다는 점을 보면 명확하다.
-(이는 break point에 대한 설명으로, Break Point k의 정의는 데이터를 흩뿌릴 수 없는, 다시말해 어떻게 데이터를 배치해도 Growth Function이 $2^k$ 보다 
-작은 k 중 가장 작은 값을 의미한다. VC Dimension은 이와 유사하게, 최대로 데이터를 흩뿌릴 수 있는 k를 의미한다. 즉, Break Point – 1 = VC Dimension 이다.)
-(Growth Function은 n개의 Data Point가 있을 때 나올 수 있는 최대의 Dichotomy의 수를 의미하고, 
-Dichotomy는 영어 사전엔 양분, 이분이란 단어로 나오는데 이는 주어진 데이터를 -1 또는 +1로 분류하는 룰을 의미한다.)
-(이와 같은 방법으로 모든 vc 차원(d+1)에 대해 적당한 샘플 수 n을 구해야 하는데, 일반적으로 정확하게 구하지 않고 대략적인 값(Rule of Thumb)을 구한다고 합니다. 
-이유는 데이터는 어차피 필요한 최소의 개수만 구하고 그만두지 않고 많으면 많을수록 좋기 때문이라고 생각합니다. 
-대략적으로 필요한 양은 VC Dimension의 10배 이상이라고 합니다.)
+<br>
+
+- 이는 break point에 대한 설명으로, Break Point k의 정의는 데이터를 흩뿌릴 수 없는, 다시말해 어떻게 데이터를 배치해도 Growth Function이 $2^k$ 보다 
+작은 k 중 가장 작은 값을 의미한다. 
+- VC Dimension은 이와 유사하게, 최대로 데이터를 흩뿌릴 수 있는 k를 의미한다. 즉, Break Point – 1 = VC Dimension 이다.
+- Growth Function은 n개의 Data Point가 있을 때 나올 수 있는 최대의 Dichotomy의 수를 의미하고, Dichotomy는 영어 사전엔 양분, 이분이란 단어로 나오는데 이는 주어진 데이터를 -1 또는 +1로 분류하는 룰을 의미한다.
+- 이와 같은 방법으로 모든 vc 차원(d+1)에 대해 적당한 샘플 수 n을 구해야 하는데, 일반적으로 정확하게 구하지 않고 대략적인 값(Rule of Thumb)을 구한다.
+- 그 이유는 데이터는 어차피 필요한 최소의 개수만 구하고 그만두는 경우가 잘 없고, 많으면 많을수록 좋기 때문이라고 생각하기 때문. 
+  - 대략적으로 필요한 양은 VC Dimension의 10배 이상이라고 함
 <br>
 
 불행하게도 이 이론은 복잡도가 높은 모델에 대해 지나치게 비관적인 경향이 있어, 이 보증을 얻으려면 일반적으로 원하는 오차율을 달성하는 데에 
